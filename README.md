@@ -16,7 +16,7 @@ NB :<br>
 `# php --version`<br>
 `PHP 5.6.40 (cli)`<br>
 
-#####Apache
+##### Apache
 Installation et lancement:<br>
 `dnf install httpd`<br>
 `systemctl enable --now httpd`<br>
@@ -25,7 +25,7 @@ Firewall :<br>
 `firewall-cmd --zone=public --permanent --add-service=http`<br>
 `firewall-cmd --reload`<br>
 
-#####MySQL 8
+##### MySQL 8
 Installation et lancement:<br>
 `dnf install @mysql`<br>
 `systemctl enable --now mysqld`<br>
@@ -41,14 +41,14 @@ y => remove test DB<br>
 y => reload privilege
 </code>
 
-#####Git
+##### Git
 `dnf install git`<br>
 
-#####Composer
+##### Composer
 `curl -sS https://getcomposer.org/installer | php`<br>
 `mv composer.phar /usr/local/bin/composer`<br>
 
-#####Security OFF
+##### Security OFF
 `vi /etc/selinux/config`<br>
 
 <pre>
@@ -65,7 +65,7 @@ SELINUX=<b>disabled</b>
 SELINUXTYPE=targeted
 </pre>
 
-#####Samba
+##### Samba
 Installation et lancement:<br>
 `dnf install samba samba-client`<br>
 `systemctl enable --now {smb,nmb}`<br>
@@ -106,26 +106,26 @@ Configuration :<br>
 `systemctl restart {smb,nmb}`<br>
 `testparm`<br>
 
-#####Droits OPENBAR
+##### Droits OPENBAR
 `cd /var/www/html`<br>
 `chown nobody:nobody -R .`<br>
 `chmod -R 777 .`<br>
 
-####Symfony 4.4
-#####Installation
-######Skeleton
+#### Symfony 4.4
+##### Installation
+###### Skeleton
 `composer create-project symfony/skeleton=^4.4 sf4-lts-base-secure`<br>
 
-######Base
+###### Base
 `composer require annotations symfony/security-bundle`<br>
 `composer require --dev maker profiler sensiolabs/security-checker reqcheck`<br>
 
-######ORM
+###### ORM
 `composer require doctrine`<br>
 `composer require --dev doctrine/doctrine-fixtures-bundle fzaninotto/faker`<br>
 
-######Frontend
+###### Frontend
 `composer require twig asset form symfony/validator`<br>
 
-######Mail
+###### Mail
 `composer require symfony/swiftmailer-bundle`<br>
