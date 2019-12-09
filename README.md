@@ -17,20 +17,20 @@ NB :<br>
 `PHP 5.6.40 (cli)`<br>
 
 ##### Apache
-Installation et lancement:<br>
+###### Installation et lancement
 `dnf install httpd`<br>
 `systemctl enable --now httpd`<br>
 
-Firewall :<br>
+###### Firewall
 `firewall-cmd --zone=public --permanent --add-service=http`<br>
 `firewall-cmd --reload`<br>
 
 ##### MySQL 8
-Installation et lancement:<br>
+###### Installation et lancement
 `dnf install @mysql`<br>
 `systemctl enable --now mysqld`<br>
 
-Configuration :<br>
+###### Configuration
 `mysql_secure_installation`<br>
 <br>
 <code>==><br>
@@ -66,15 +66,15 @@ SELINUXTYPE=targeted
 </pre>
 
 ##### Samba
-Installation et lancement:<br>
+###### Installation et lancement
 `dnf install samba samba-client`<br>
 `systemctl enable --now {smb,nmb}`<br>
 
-Firewall :<br>
+###### Firewall
 `firewall-cmd --permanent --add-service=samba`<br>
 `firewall-cmd --reload`<br>
 
-Configuration :<br>
+###### Configuration
 `vi /etc/samba/smb.conf`<br>
 
 <pre>
